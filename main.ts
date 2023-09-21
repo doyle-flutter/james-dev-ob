@@ -1,35 +1,41 @@
-import { Plugin, Modal, App } from 'obsidian';
+import { Plugin,ItemView, WorkspaceLeaf } from 'obsidian';
 
 export default class JamesPulgIn extends Plugin{
-
-	test(){
-		// add - 무언가 추가 할 수 있는 것
-		// addRibbonIcon 를 간단히 사용해보았기 때문에 
-		// addEvents 와 같은 구조로 진행 될 것을 알 수 있음
-		this.addRibbonIcon;
-		this.addCommand;
-		this.addSettingTab;
-		this.addStatusBarItem;
-		this.addChild;
-	}
-
 	async onload() {
-		this.addRibbonIcon("dice", "show Modal", _ => new ExampleModal(this.app).open());
+		this.registerView(VIEW_DARTPAD, (leaf) => new DartView(leaf));
+		this.addRibbonIcon("play-circle", "show DartPad", (_: MouseEvent) => {
+			this.activateView();
+		});
 	}
+	async activateView() {
+		this.app.workspace.detachLeavesOfType(VIEW_DARTPAD);
+	
+		await this.app.workspace.getRightLeaf(false).setViewState({
+		  type: VIEW_DARTPAD,
+		  active: true,
+		});
+	
+		this.app.workspace.revealLeaf(
+		  this.app.workspace.getLeavesOfType(VIEW_DARTPAD)[0]
+		);
+	  }
 }
-
-export class ExampleModal extends Modal {
-	constructor(app: App) {
-		super(app);
+const VIEW_DARTPAD = "VIEW_TYPE_DARTPAD";
+class DartView extends ItemView{
+	constructor(leaf:WorkspaceLeaf){
+		super(leaf);
+	}
+	getViewType() {
+		return VIEW_DARTPAD;
+	  }
+	
+	  getDisplayText() {
+		return VIEW_DARTPAD;
+	  }
+	async onOpen(){
+		let container = this.containerEl.children[1];
+		container.empty();
+		container.createEl("iframe", {"attr":{"src":"https://dartpad.dev/embed-inline.html?id=5d70bc1889d055c7a18d35d77874af88"}});
 	}
 
-	onOpen() {
-		let { contentEl } = this;
-		contentEl.setText("James Moodal");
-	}
-
-	onClose() {
-		let { contentEl } = this;
-		contentEl.empty();
-	}
 }

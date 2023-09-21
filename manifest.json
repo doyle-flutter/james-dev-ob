@@ -1,11 +1,10 @@
 {
 	"id": "james-dev-ob",
-	"name": "JamesDev",
-	"version": "1.0.1",
+	"name": "Obsidian with Dartpad",
+	"version": "1.0.2",
 	"minAppVersion": "0.15.0",
-	"description": "JamesDev Edu Sample Plugin",
+	"description": "Obsidian with Dartpad",
 	"author": "JamesDev",
 	"authorUrl": "https://youtube.com/@JamessDev",
-	"fundingUrl": "https://youtube.com/@JamessDev",
 	"isDesktopOnly": false
 }
