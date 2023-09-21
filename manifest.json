@@ -1,6 +1,6 @@
 {
 	"id": "james-dev-ob",
-	"name": "Obsidian with Dartpad",
+	"name": "Run DartPad",
 	"version": "1.0.2",
 	"minAppVersion": "0.15.0",
 	"description": "Obsidian with Dartpad",
