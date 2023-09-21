@@ -9,7 +9,7 @@ If your plugin does not need CSS, delete this file.
 
 iframe {
     display: block;
-    background: #000;
+    background: #eee;
     border: none;
     height: 100vh;
     width: 100%;
