@@ -7,7 +7,7 @@ Obsidian + DartPad
 <br/>
 <br/>
 <hr />
-
+<br/>
 ### preivew
 
 <br/>
@@ -27,3 +27,11 @@ Run DartPad 설치하면 리본 메뉴에 버튼이 생성됩니다.
 <br/>
 (2)
 <img src="./preview2.png" width="100%" title="preview2"/>
+<br/>
+<hr />
+<br/>
+
+### UPDATES
+- [ ] add more Language(JS, Python ...)
+- [ ] add Framework
+- [ ] ...
