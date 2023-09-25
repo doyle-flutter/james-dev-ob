@@ -7,7 +7,7 @@ If your plugin does not need CSS, delete this file.
 
 */
 
-iframe {
+iframe.dartView {
     display: block;
     background: #eee;
     border: none;

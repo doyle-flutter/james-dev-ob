@@ -35,7 +35,7 @@ class DartView extends ItemView{
 	async onOpen(){
 		let container = this.containerEl.children[1];
 		container.empty();
-		container.createEl("iframe", {"attr":{"src":"https://dartpad.dev/embed-inline.html?id=5d70bc1889d055c7a18d35d77874af88"}});
+		container.createEl("iframe", {"cls":"dartView","attr":{"src":"https://dartpad.dev/embed-inline.html?id=5d70bc1889d055c7a18d35d77874af88"}});
 	}
 
 }
